@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int start, end, temp, i, j, isPrime;
+    printf("Enter start: ");
+    scanf("%d", &start);
+    printf("Enter end: ");
+    scanf("%d", &end);
+
+    if(start > end){
+        temp = start;
+        start = end;
+        end = temp;
+    }
+
+    printf("Prime numbers between %d and %d:\n", start, end);
+
+    int firstPrinted = 0;
+    for(i = start; i <= end; i++){
+        if(i < 2) continue; 
+
+        isPrime = 1;
+        for(j = 2; j * j <= i; j++){ 
+            if(i % j == 0){
+                isPrime = 0;
+                break;
+            }
+        } 
+
+        if(isPrime){
+            if(firstPrinted){
+               printf(", ");
+            }   
+            printf("%d", i);
+            firstPrinted = 1;
+        }
+    }
+
+    printf("\n");
+    return 0;
+}

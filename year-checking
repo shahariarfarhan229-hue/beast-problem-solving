@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int year;
+    printf("Enter a year: ");
+    if (scanf("%d", &year) != 1) {
+        printf("Invalid input!\n");
+        return 1;
+    }
+
+    if (year <= 0) {
+        printf("Error: Please enter a valid year from A.D. 1 onwards.\n");
+    } else {
+        if (year % 100 == 0) {
+            printf("Century Year. ");
+        } else {
+            printf("Not a Century Year. ");
+        }
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            printf("Leap Year.\n");
+        } else {
+            printf("Common Year.\n");
+        }
+    }
+
+    return 0;
+}

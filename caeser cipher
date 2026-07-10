@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void encrypt(char sentence[], int shift){
+  for(int i = 0; sentence[i] != '\0'; i++){
+    char letter = sentence[i];
+    if(letter >= 'A' && letter <= 'Z'){
+      letter = ((letter - 'A' + shift) %26) + 'A';
+      sentence[i] = letter;
+    }else if(letter >= 'a' && letter <= 'z'){
+      letter = ((letter - 'a' + shift) %26) + 'a';
+      sentence[i] = letter;
+    }
+    }
+    }
+
+    
+int main(){
+  char sentence[100];
+  int shift;
+  printf("Enter a sentence: ");
+  fgets(sentence, sizeof(sentence), stdin);
+  printf("You entered: %s", sentence);
+  printf("Enter the shift value: ");
+  scanf("%d", &shift);
+  encrypt(sentence, shift);
+  printf("Encrypted sentence: %s", sentence);
+  return 0;
+}

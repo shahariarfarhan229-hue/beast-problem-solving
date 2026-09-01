@@ -1,0 +1,1 @@
+A collection of tricky, "twisted," or unconventional programming problems along with their solutions and explanations. This repo is meant as a practice ground for sharpening problem-solving skills through unusual edge cases, brain-teasers, and non-standard approaches to common problems.
